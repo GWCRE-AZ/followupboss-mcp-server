@@ -131,8 +131,10 @@ async function main() {
 function printNextSteps(safeMode) {
   const fullPath = resolve(__dirname);
 
-  const envBlock = { FUB_API_KEY: "your_api_key_here" };
-  if (safeMode) envBlock.FUB_SAFE_MODE = "true";
+  const envBlock = {
+    FUB_API_KEY: "your_api_key_here",
+    FUB_SAFE_MODE: safeMode ? "true" : "false"
+  };
 
   console.log('');
   console.log('===========================================');
