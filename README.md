@@ -150,7 +150,7 @@ cp .env.always-on.example .env
 npm run start:http
 ```
 
-Set `FUB_SAFE_MODE=false` in `.env` for full access, including delete tools. Protect the HTTP endpoint with `MCP_BEARER_TOKEN` or `MCP_AUTH_PASSWORD`; do not expose it publicly without authentication. See [ALWAYS_ON.md](ALWAYS_ON.md) for PM2/systemd keep-alive instructions and client URLs.
+Set `FUB_SAFE_MODE=false` in `.env` for full access, including delete tools. Protect the HTTP endpoint with `MCP_BEARER_TOKEN` or `MCP_AUTH_PASSWORD`; do not expose it publicly without authentication. Local desktop access works without a tunnel, same-LAN mobile access can use the desktop's LAN IP, and off-network/cloud agents need a tunnel, VPN, reverse proxy, or cloud deployment. See [ALWAYS_ON.md](ALWAYS_ON.md) for PM2/systemd keep-alive instructions and client URLs.
 
 ### Step 4: Connect to Your AI Tool
 
