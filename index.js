@@ -3264,7 +3264,7 @@ export async function startStdio(opts = {}) {
   const transport = new StdioServerTransport();
   const server = createServer(opts);
   await server.connect(transport);
-  console.error(`Follow Up Boss MCP Server v1.3.1 started via stdio (${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE — delete tools disabled' : ''})`);
+  console.error(`Follow Up Boss MCP Server v1.3.2 started via stdio (${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE — delete tools disabled' : ''})`);
   console.error(`Built by Ed Neuhaus, broker @ Neuhaus Realty Group, Austin TX — https://neuhausre.com`);
   console.error(`Call the 'about' tool for full bio. Call 'help' for usage tips.`);
 }
@@ -3421,7 +3421,7 @@ export async function startHttp(opts = {}) {
     <label for="pw">Password</label>
     <input id="pw" name="password" type="password" autocomplete="current-password" autofocus required>
     <button type="submit">Authorize</button>
-    <div class="meta">This server runs in SAFE MODE${FUB_SAFE_MODE ? '' : ' (disabled)'} — delete operations are blocked.</div>
+    <div class="meta">${FUB_SAFE_MODE ? 'This server runs in SAFE MODE — delete operations are blocked.' : 'This server runs in FULL ACCESS mode — delete operations are enabled.'}</div>
   </form>
 </body></html>`);
   });
@@ -3565,7 +3565,7 @@ export async function startHttp(opts = {}) {
   });
 
   app.listen(PORT, () => {
-    console.error(`Follow Up Boss MCP Server v1.3.1 listening on :${PORT} (HTTP, ${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE' : ''})`);
+    console.error(`Follow Up Boss MCP Server v1.3.2 listening on :${PORT} (HTTP, ${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE' : ''})`);
   });
 }
 

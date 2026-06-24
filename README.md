@@ -141,6 +141,17 @@ You should see:
 
 If all 3 pass, you're good to go. If something fails, double-check your API key in the `.env` file.
 
+### Always-on desktop / mobile access
+
+If you want this MCP server to run continuously on an always-on PC and be reachable from desktop apps, mobile apps, Codex, or other remote MCP clients, use the HTTP transport template:
+
+```bash
+cp .env.always-on.example .env
+npm run start:http
+```
+
+Set `FUB_SAFE_MODE=false` in `.env` for full access, including delete tools. Protect the HTTP endpoint with `MCP_BEARER_TOKEN` or `MCP_AUTH_PASSWORD`; do not expose it publicly without authentication. Local desktop access works without a tunnel, same-LAN mobile access can use the desktop's LAN IP, and off-network/cloud agents need a tunnel, VPN, reverse proxy, or cloud deployment. If you plan to use Cloudflare Tunnel for ChatGPT, Hermes, Codex, or mobile access away from Wi-Fi, see [CLOUDFLARE_TUNNEL.md](CLOUDFLARE_TUNNEL.md). See [ALWAYS_ON.md](ALWAYS_ON.md) for PM2/systemd keep-alive instructions and client URLs.
+
 ### Step 4: Connect to Your AI Tool
 
 Pick the tool you use below. Each one needs a small config file edit -- the setup wizard (`npm run setup`) will show you the exact paths and JSON for your computer, but here are the manual instructions for each.
