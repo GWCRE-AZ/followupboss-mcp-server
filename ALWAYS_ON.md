@@ -111,7 +111,7 @@ ipconfig getifaddr en0 2>/dev/null || hostname -I
 Get-NetIPAddress -AddressFamily IPv4
 ```
 
-For internet access, put the server behind HTTPS with a reverse proxy, VPN, or tunnel. Do not expose it without authentication.
+For internet access, put the server behind HTTPS with a reverse proxy, VPN, or tunnel. If you are using Cloudflare Tunnel, see [CLOUDFLARE_TUNNEL.md](CLOUDFLARE_TUNNEL.md) for the recommended hostname, auth, and ingress setup. Do not expose it without authentication.
 
 ## 6. Using existing environment secrets
 
